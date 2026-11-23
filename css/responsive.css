@@ -1,0 +1,53 @@
+img, video, canvas {
+  max-width: 100%;
+}
+
+input, textarea, select {
+  max-width: 100%;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.quiz-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 12px;
+}
+
+.quiz-option:hover:not(:disabled) {
+  background: var(--surface-hover);
+}
+
+.quiz-option.correct {
+  border-color: #31c98b;
+  background: rgba(49,201,139,.12);
+}
+
+.quiz-option.incorrect {
+  border-color: #ff7474;
+  background: rgba(255,116,116,.12);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+@media(max-width:480px) {
+  h1 { overflow-wrap: anywhere; }
+  .container { width: 94%; }
+  .category-card { padding: 19px; }
+  .hero h1 { letter-spacing: -2px; }
+}
