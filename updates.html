@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latest Updates | DestiQora</title>
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<header class="navbar glass">
+  <a href="./index.html" class="brand">
+    <span class="brand-icon">D</span>
+    <span><strong>DestiQora</strong><small>STUDY HUB</small></span>
+  </a>
+</header>
+
+<main class="container section">
+  <span class="eyebrow">WHAT'S NEW</span>
+  <h1>Latest Announcements</h1>
+  <div id="updates" class="notice-list" style="margin-top:25px">
+    <div class="loading-card glass">Loading announcements...</div>
+  </div>
+</main>
+
+<script type="module">
+import {db,collection,query,where,orderBy,onSnapshot}
+from "./js/firebase.js";
+
+const area=document.getElementById("updates");
+
+const q=query(
+  collection(db,"notices"),
+  where("published","==",true),
+  orderBy("createdAt","desc")
+);
+
+onSnapshot(q,snap=>{
+  area.replaceChildren();
+
+  if(snap.empty){
+    area.textContent="No announcements available.";
+    return;
+  }
+
+  snap.forEach(d=>{
+    const n=d.data();
+    const card=document.createElement("article");
+    card.className="notice-card glass";
+
+    const title=document.createElement("h3");
+    title.textContent=n.title || "Announcement";
+
+    const body=document.createElement("p");
+    body.textContent=n.body || "";
+
+    card.append(title,body);
+    area.append(card);
+  });
+},error=>{
+  console.error(error);
+  area.textContent="Unable to load updates.";
+});
+</script>
+</body>
+</html>
