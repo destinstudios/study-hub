@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign In | DestiQora</title>
+<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+
+<main class="auth-container">
+  <a href="./index.html" class="back-link">← Back to home</a>
+
+  <section class="auth-card glass">
+    <div class="brand-icon auth-logo">D</div>
+
+    <span class="eyebrow">WELCOME TO DESTIQORA</span>
+    <h1>Welcome back.</h1>
+    <p>Sign in to access your personal learning space.</p>
+
+    <button id="googleLogin" class="google-button">
+      <span>G</span> Continue with Google
+    </button>
+
+    <p id="authMessage" class="auth-message"></p>
+
+    <small>
+      By continuing, you agree to our
+      <a href="./terms.html">Terms</a> and
+      <a href="./privacy.html">Privacy Policy</a>.
+    </small>
+  </section>
+</main>
+
+<script type="module">
+import { loginWithGoogle } from "./js/auth.js";
+
+const button = document.getElementById("googleLogin");
+const message = document.getElementById("authMessage");
+
+button.addEventListener("click", async () => {
+  button.disabled = true;
+  message.textContent = "Signing you in...";
+
+  try {
+    await loginWithGoogle();
+    window.location.href = "./dashboard.html";
+  } catch (error) {
+    console.error(error);
+    message.textContent =
+      error.message || "Unable to sign in. Please try again.";
+  } finally {
+    button.disabled = false;
+  }
+});
+</script>
+
+</body>
+</html>
