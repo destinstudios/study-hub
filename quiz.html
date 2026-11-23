@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quizzes | DestiQora</title>
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<header class="navbar glass">
+  <a href="./index.html" class="brand">
+    <span class="brand-icon">D</span>
+    <span><strong>DestiQora</strong><small>STUDY HUB</small></span>
+  </a>
+  <a href="./dashboard.html" class="btn btn-glass">Dashboard</a>
+</header>
+
+<main class="container section">
+  <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+  <h1>Practice Quizzes</h1>
+  <p style="color:var(--muted);margin:12px 0 25px">
+    Learn, practice and improve your score.
+  </p>
+
+  <div id="quizList" class="resource-grid">
+    <div class="loading-card glass">Loading quizzes...</div>
+  </div>
+
+  <section id="quizArea" class="glass hidden"
+    style="margin-top:25px;padding:25px;border-radius:20px">
+    <h2 id="questionTitle"></h2>
+    <p id="questionCounter" style="color:var(--muted);margin:12px 0"></p>
+    <div id="questionOptions"></div>
+    <p id="quizFeedback" style="margin:15px 0"></p>
+    <button id="nextQuestion" class="btn btn-primary">Next</button>
+  </section>
+</main>
+
+<script type="module" src="./js/quiz.js"></script>
+</body>
+</html>
