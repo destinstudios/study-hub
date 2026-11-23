@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Online Tools | DestiQora</title>
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+<header class="navbar glass">
+  <a href="./index.html" class="brand">
+    <span class="brand-icon">D</span>
+    <span><strong>DestiQora</strong><small>STUDY HUB</small></span>
+  </a>
+</header>
+
+<main class="container section">
+  <span class="eyebrow">PRODUCTIVITY CORNER</span>
+  <h1>Smart Online Tools</h1>
+  <p style="color:var(--muted);margin:12px 0 25px">
+    Useful utilities for everyday work and learning.
+  </p>
+
+  <div class="category-grid" id="toolsGrid">
+
+    <section class="glass category-card">
+      <h3>Basic Calculator</h3>
+      <input id="calcInput" placeholder="Example: 25*4+10">
+      <button id="calcBtn" class="btn btn-primary">Calculate</button>
+      <p id="calcResult"></p>
+    </section>
+
+    <section class="glass category-card">
+      <h3>Scientific Calculator</h3>
+      <input id="sciInput" placeholder="Example: sin(30)">
+      <button id="sciBtn" class="btn btn-primary">Calculate</button>
+      <p id="sciResult"></p>
+    </section>
+
+    <section class="glass category-card">
+      <h3>Word & Character Counter</h3>
+      <textarea id="countText" placeholder="Type your text..."></textarea>
+      <p id="countResult">Words: 0 | Characters: 0</p>
+    </section>
+
+    <section class="glass category-card">
+      <h3>Text Case Converter</h3>
+      <textarea id="caseText" placeholder="Enter text..."></textarea>
+      <button data-case="upper" class="btn btn-glass">UPPERCASE</button>
+      <button data-case="lower" class="btn btn-glass">lowercase</button>
+      <button data-case="title" class="btn btn-glass">Title Case</button>
+      <p id="caseResult"></p>
+    </section>
+
+    <section class="glass category-card">
+      <h3>Password Strength Checker</h3>
+      <input type="password" id="passwordInput">
+      <p id="passwordResult"></p>
+    </section>
+
+    <section class="glass category-card">
+      <h3>QR Code Generator</h3>
+      <input id="qrText" placeholder="Enter URL or text">
+      <button id="qrBtn" class="btn btn-primary">Generate QR</button>
+      <div id="qrResult"></div>
+    </section>
+
+    <section class="glass category-card">
+      <h3>Unit Converter</h3>
+      <input type="number" id="unitValue" placeholder="Value">
+      <select id="unitType">
+        <option value="km-mi">Kilometres to Miles</option>
+        <option value="mi-km">Miles to Kilometres</option>
+        <option value="kg-lb">Kilograms to Pounds</option>
+        <option value="lb-kg">Pounds to Kilograms</option>
+        <option value="c-f">Celsius to Fahrenheit</option>
+        <option value="f-c">Fahrenheit to Celsius</option>
+      </select>
+      <button id="unitBtn" class="btn btn-primary">Convert</button>
+      <p id="unitResult"></p>
+    </section>
+
+    <section class="glass category-card">
+      <h3>Percentage Calculator</h3>
+      <input type="number" id="percentA" placeholder="Percentage">
+      <input type="number" id="percentB" placeholder="Number">
+      <button id="percentBtn" class="btn btn-primary">Calculate</button>
+      <p id="percentResult"></p>
+    </section>
+
+    <section class="glass category-card">
+      <h3>Age Calculator</h3>
+      <input type="date" id="birthDate">
+      <button id="ageBtn" class="btn btn-primary">Calculate Age</button>
+      <p id="ageResult"></p>
+    </section>
+
+    <section class="glass category-card">
+      <h3>Quick Notes</h3>
+      <textarea id="quickNotes" placeholder="Write your notes..."></textarea>
+      <button id="saveNotes" class="btn btn-primary">Save Notes</button>
+      <p id="notesStatus"></p>
+    </section>
+
+    <section class="glass category-card">
+      <h3>English Vocabulary</h3>
+      <p id="vocabWord"></p>
+      <p id="vocabMeaning"></p>
+      <button id="nextVocab" class="btn btn-primary">Next Word</button>
+    </section>
+
+    <section class="glass category-card">
+      <h3>Scientific Constants</h3>
+      <p>Speed of light: 3 × 10⁸ m/s</p>
+      <p>Gravitational acceleration: 9.8 m/s²</p>
+      <p>Planck constant: 6.626 × 10⁻³⁴ J·s</p>
+    </section>
+
+  </div>
+</main>
+
+<script type="module" src="./js/tools.js"></script>
+</body>
+</html>
