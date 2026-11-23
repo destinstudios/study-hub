@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DestiQora – Study Hub</title>
+
+  <meta name="description"
+    content="DestiQora Study Hub – Learn, practice, explore and grow.">
+
+  <meta name="theme-color" content="#101426">
+
+  <link rel="icon" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar glass">
+  <a href="./index.html" class="brand">
+    <span class="brand-icon">D</span>
+    <span>
+      <strong>DestiQora</strong>
+      <small>STUDY HUB</small>
+    </span>
+  </a>
+
+  <button class="menu-toggle" id="menuToggle">☰</button>
+
+  <nav id="mainNav">
+    <a href="./index.html" class="active">Home</a>
+    <a href="./study.html">Study Zone</a>
+    <a href="./courses.html">Courses</a>
+    <a href="./tools.html">Tools</a>
+    <a href="./english.html">English</a>
+    <a href="./quiz.html">Quiz</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button id="themeToggle" class="icon-btn">☾</button>
+    <a href="./login.html" class="btn btn-primary" id="loginBtn">
+      Sign in
+    </a>
+    <a href="./dashboard.html" class="btn btn-primary hidden" id="profileBtn">
+      Dashboard
+    </a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero container">
+  <div class="hero-content">
+    <span class="eyebrow">YOUR PERSONAL LEARNING SPACE</span>
+
+    <h1>
+      Learn better.<br>
+      <span>Grow further.</span>
+    </h1>
+
+    <p>
+      Your notes, study materials, online tools and learning
+      resources — all together in one beautiful place.
+    </p>
+
+    <div class="hero-actions">
+      <a href="./study.html" class="btn btn-primary">
+        Explore Study Zone →
+      </a>
+
+      <a href="./quiz.html" class="btn btn-glass">
+        Practice Quiz
+      </a>
+    </div>
+
+    <div class="hero-features">
+      <span>✦ Free learning resources</span>
+      <span>✦ Smart study tools</span>
+      <span>✦ Learn at your pace</span>
+    </div>
+  </div>
+
+  <div class="hero-art">
+    <div class="orb"></div>
+
+    <div class="floating-card card-one glass">
+      <span>📚</span>
+      <div>
+        <strong>Study Materials</strong>
+        <small>Notes, PDFs and more</small>
+      </div>
+    </div>
+
+    <div class="floating-card card-two glass">
+      <span>⚡</span>
+      <div>
+        <strong>Smart Learning</strong>
+        <small>Practice every day</small>
+      </div>
+    </div>
+
+    <div class="floating-card card-three glass">
+      <span>🎯</span>
+      <div>
+        <strong>Keep Growing</strong>
+        <small>One step at a time</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container stats-grid">
+  <div class="stat-card glass">
+    <span>📄</span>
+    <strong id="resourceCount">0</strong>
+    <small>Study Resources</small>
+  </div>
+
+  <div class="stat-card glass">
+    <span>📢</span>
+    <strong id="noticeCount">0</strong>
+    <small>Announcements</small>
+  </div>
+
+  <div class="stat-card glass">
+    <span>🧠</span>
+    <strong>12+</strong>
+    <small>Online Tools</small>
+  </div>
+
+  <div class="stat-card glass">
+    <span>🌐</span>
+    <strong>Anytime</strong>
+    <small>Learning Access</small>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">EXPLORE</span>
+      <h2>Everything you need to learn</h2>
+    </div>
+    <a href="./study.html" class="text-link">View all →</a>
+  </div>
+
+  <div class="category-grid">
+    <a href="./study.html?subject=Mathematics" class="category-card glass">
+      <span>📐</span>
+      <h3>Mathematics</h3>
+      <p>Concepts, notes and practice.</p>
+    </a>
+
+    <a href="./study.html?subject=Physics" class="category-card glass">
+      <span>⚛️</span>
+      <h3>Physics</h3>
+      <p>Learn science with clarity.</p>
+    </a>
+
+    <a href="./study.html?subject=Applied Chemistry" class="category-card glass">
+      <span>🧪</span>
+      <h3>Chemistry</h3>
+      <p>Notes and study materials.</p>
+    </a>
+
+    <a href="./english.html" class="category-card glass">
+      <span>🗣️</span>
+      <h3>Communication</h3>
+      <p>Improve English skills.</p>
+    </a>
+
+    <a href="./study.html?subject=Programming" class="category-card glass">
+      <span>💻</span>
+      <h3>Programming</h3>
+      <p>Explore coding resources.</p>
+    </a>
+
+    <a href="./courses.html" class="category-card glass">
+      <span>🎓</span>
+      <h3>Courses</h3>
+      <p>Organized learning paths.</p>
+    </a>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">FRESH CONTENT</span>
+      <h2>Latest study materials</h2>
+    </div>
+    <a href="./study.html" class="text-link">Explore →</a>
+  </div>
+
+  <div class="resource-grid" id="latestResources">
+    <div class="loading-card glass">Loading resources...</div>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">STAY UPDATED</span>
+      <h2>Latest announcements</h2>
+    </div>
+    <a href="./updates.html" class="text-link">All updates →</a>
+  </div>
+
+  <div id="latestNotices" class="notice-list">
+    <div class="loading-card glass">Loading updates...</div>
+  </div>
+</section>
+
+<section class="container cta-section glass">
+  <span class="eyebrow">START YOUR JOURNEY</span>
+  <h2>Make every day a learning day.</h2>
+  <p>Sign in and access your personalized learning space.</p>
+  <a href="./login.html" class="btn btn-primary">Get Started →</a>
+</section>
+
+</main>
+
+<footer class="footer container">
+  <div>
+    <strong>DestiQora – Study Hub</strong>
+    <p>Learn. Practice. Create. Grow.</p>
+  </div>
+
+  <div class="footer-links">
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+    <a href="./privacy.html">Privacy</a>
+    <a href="./terms.html">Terms</a>
+    <a href="./disclaimer.html">Disclaimer</a>
+  </div>
+
+  <p class="copyright">
+    © <span id="currentYear"></span> DestiQora. All rights reserved.
+  </p>
+</footer>
+
+<script type="module" src="./js/app.js"></script>
+
+</body>
+</html>
