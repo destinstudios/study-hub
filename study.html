@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study Zone | DestiQora</title>
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+<header class="navbar glass">
+  <a href="./index.html" class="brand">
+    <span class="brand-icon">D</span>
+    <span><strong>DestiQora</strong><small>STUDY HUB</small></span>
+  </a>
+  <a href="./dashboard.html" class="btn btn-glass">Dashboard</a>
+</header>
+
+<main class="container section">
+  <span class="eyebrow">YOUR LEARNING LIBRARY</span>
+  <h1>Study Zone</h1>
+  <p style="color:var(--muted);margin:12px 0 25px">
+    Explore notes, PDFs, presentations and learning resources.
+  </p>
+
+  <div class="glass" style="padding:18px;border-radius:18px;display:flex;gap:10px;flex-wrap:wrap">
+    <input id="searchInput" placeholder="Search materials..."
+      style="flex:2;min-width:180px;padding:13px;border-radius:10px">
+    <select id="subjectFilter" style="flex:1;min-width:150px;padding:13px;border-radius:10px">
+      <option value="">All Subjects</option>
+      <option>Mathematics</option>
+      <option>Applied Chemistry</option>
+      <option>Physics</option>
+      <option>Communication Skills</option>
+      <option>Programming</option>
+      <option>Computer Science Engineering</option>
+      <option>Other Subjects</option>
+    </select>
+    <select id="semesterFilter" style="flex:1;min-width:130px;padding:13px;border-radius:10px">
+      <option value="">All Semesters</option>
+      <option>1st Semester</option>
+      <option>2nd Semester</option>
+      <option>3rd Semester</option>
+      <option>4th Semester</option>
+      <option>5th Semester</option>
+      <option>6th Semester</option>
+    </select>
+  </div>
+
+  <div id="studyGrid" class="resource-grid" style="margin-top:25px">
+    <div class="loading-card glass">Loading study materials...</div>
+  </div>
+</main>
+
+<script type="module" src="./js/study.js"></script>
+</body>
+</html>
