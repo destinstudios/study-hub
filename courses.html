@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Courses | DestiQora</title>
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<header class="navbar glass">
+  <a href="./index.html" class="brand">
+    <span class="brand-icon">D</span>
+    <span><strong>DestiQora</strong><small>STUDY HUB</small></span>
+  </a>
+</header>
+
+<main class="container section">
+  <span class="eyebrow">LEARNING PATHS</span>
+  <h1>Explore Courses</h1>
+  <div id="courseGrid" class="resource-grid" style="margin-top:25px">
+    <div class="loading-card glass">Loading courses...</div>
+  </div>
+</main>
+
+<script type="module">
+import {db,collection,query,where,getDocs}
+from "./js/firebase.js";
+
+const area=document.getElementById("courseGrid");
+
+try {
+  const q=query(collection(db,"courses"),where("published","==",true));
+  const snap=await getDocs(q);
+
+  area.innerHTML=snap.empty
+    ? '<div class="loading-card glass">No courses published yet.</div>'
+    : snap.docs.map(d=>{
+      const c=d.data();
+      const card=document.createElement("article");
+      card.className="resource-card glass";
+
+      const title=document.createElement("h3");
+      title.textContent=c.title || "Course";
+
+      const description=document.createElement("p");
+      description.textContent=c.description || "";
+
+      card.append(title,description);
+      return card.outerHTML;
+    }).join("");
+} catch(error) {
+  console.error(error);
+  area.textContent="Unable to load courses.";
+}
+</script>
+</body>
+</html>
